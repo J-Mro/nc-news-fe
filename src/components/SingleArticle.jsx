@@ -13,16 +13,14 @@ export function SingleArticle({ articleData }) {
     getData();
   }, []);
   return (
-    <section>
-      <h2>hello</h2>
+    <section className="single-article-view">
       <h2>{article.title}</h2>
+      <p>by: {article.author}</p>
       <p>{article.topic}</p>
-      <p>{article.author}</p>
-      <p>{article.created_at}</p>
+      <p>{new Date(article.created_at).toLocaleString()}</p>
       <img src={`${article.article_img_url}`} alt="" />
       <p>{article.body}</p>
-      <p>{article.votes}</p>
-      <p>{article.comments}</p>
+      <p>votes: {article.votes}</p>
     </section>
   );
 }
