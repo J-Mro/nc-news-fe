@@ -18,7 +18,7 @@ export function ArticlesList() {
       {articles.length !== 0 &&
         articles.map((article, index) => {
           return (
-            <Link to={`/api/articles/${article.article_id}`}>
+            <Link to={`/articles/${article.article_id}`}>
               <ArticleCard
                 key={`${index}+${article.title}`}
                 articleData={article}
