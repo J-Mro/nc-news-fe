@@ -12,8 +12,10 @@ export function ArticleCard({ articleData }) {
     <section className="article-card">
       <h3>{title}</h3>
       <p>{author}</p>
-      <p>{created_at}</p>
+      <p>{new Date(created_at).toLocaleString()}</p>
       <img src={`${article_img_url}`} alt="article picture" width={400} />
+      <p>votes: {votes}</p>
+      <p>comments: {comment_count}</p>
     </section>
   );
 }
