@@ -11,8 +11,11 @@ export function CommentsList({ article_id }) {
     getData();
   }, []);
   return (
-    <section>
+    <>
       <h3>comments</h3>
+      <section>
+        {comments.comments && <p>count: {comments.comments.length}</p>}
+      </section>
       {comments.comments &&
         comments.comments.map((comment, index) => {
           return (
@@ -24,6 +27,6 @@ export function CommentsList({ article_id }) {
             </div>
           );
         })}
-    </section>
+    </>
   );
 }
