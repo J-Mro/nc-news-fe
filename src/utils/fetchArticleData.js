@@ -1,16 +1,13 @@
 import axios from "axios";
 
-export function fetchArticleData() {
-  return axios
-    .get("https://nc-back-end.onrender.com/api/articles")
-    .then(({ data }) => {
-      return data;
-    });
+export async function fetchArticleData() {
+  const res = await axios.get("https://nc-back-end.onrender.com/api/articles");
+  return res.data;
 }
-export function fetchArticleById(article_id) {
-  return axios
-    .get(`https://nc-back-end.onrender.com/api/articles/${article_id}`)
-    .then(({ data }) => {
-      return data;
-    });
+
+export async function fetchArticleById(article_id) {
+  const res = await axios.get(
+    `https://nc-back-end.onrender.com/api/articles/${article_id}`,
+  );
+  return res.data;
 }
