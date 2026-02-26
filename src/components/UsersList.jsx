@@ -16,18 +16,18 @@ export function UsersList() {
   return (
     <section>
       <h2>Users</h2>
+      <h3>Who's browsing?</h3>
       {users.length !== 0 &&
         users.map((user, index) => {
           return (
             <div>
-              <h3>{user.username}</h3>
-              <img src={`${user.avatar_url}`} alt="user profile picture" />
               <button
                 onClick={() => {
                   setLoggedInUser(user);
                 }}
               >
-                Log In
+                <h4>{user.username}</h4>
+                <img src={`${user.avatar_url}`} alt="user profile picture" />
               </button>
             </div>
           );
