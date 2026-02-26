@@ -37,7 +37,9 @@ export function ArticleLikeBtn({ setVoteChangeState, article_id, article }) {
       <button onClick={eventHandlerLike} disabled={isDisabled}>
         Like
       </button>
-      <button onClick={eventHandlerDislike}>Dislike</button>
+      <button onClick={eventHandlerDislike} disabled={isDisabled}>
+        Dislike
+      </button>
     </>
   );
 }
