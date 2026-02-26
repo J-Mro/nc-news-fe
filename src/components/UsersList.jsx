@@ -1,10 +1,9 @@
-import { UserContext } from "../contexts/User";
 import { fetchUserData } from "../utils/fetchUserData";
-import { useEffect, useState, useContext } from "react";
-
+import { useEffect, useState } from "react";
+import { UserCard } from "./UserCard";
 export function UsersList() {
   const [users, setUsers] = useState([]);
-  const { setLoggedInUser } = useContext(UserContext);
+
   useEffect(() => {
     async function getData() {
       const res = await fetchUserData();
@@ -19,18 +18,7 @@ export function UsersList() {
       <h3>Who's browsing?</h3>
       {users.length !== 0 &&
         users.map((user, index) => {
-          return (
-            <div>
-              <button
-                onClick={() => {
-                  setLoggedInUser(user);
-                }}
-              >
-                <h4>{user.username}</h4>
-                <img src={`${user.avatar_url}`} alt="user profile picture" />
-              </button>
-            </div>
-          );
+          return <UserCard user={user} />;
         })}
     </section>
   );
