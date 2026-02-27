@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchCommentData } from "../utils/fetchCommentData";
+import { CommentForm } from "./CommentForm";
 
 export function CommentsList({ article_id }) {
   const [comments, setComments] = useState({});
@@ -27,6 +28,7 @@ export function CommentsList({ article_id }) {
             </div>
           );
         })}
+      <CommentForm setComments={setComments} article_id={article_id} />
     </>
   );
 }
