@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { postComment } from "../utils/postComment";
-import { fetchCommentData } from "../utils/fetchCommentData";
 import { useContext } from "react";
 import { UserContext } from "../contexts/User";
 
@@ -18,7 +17,6 @@ export function CommentForm({ setComments, article_id }) {
     const res = await postComment(article_id, username, body);
     setStatusMsg(res);
   }
-  console.log("status message current state:", statusMsg);
   return (
     <form>
       <label>
@@ -32,7 +30,6 @@ export function CommentForm({ setComments, article_id }) {
         <button
           type="button"
           onClick={() => {
-            console.log("Hey im clicked");
             postData();
           }}
         >
