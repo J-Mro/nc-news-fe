@@ -1,7 +1,9 @@
 import axios from "axios";
 
-export async function fetchArticleData() {
-  const res = await axios.get("https://nc-back-end.onrender.com/api/articles");
+export async function fetchArticleData(sort_by) {
+  const res = await axios.get(
+    `https://nc-back-end.onrender.com/api/articles?sort_by=${sort_by}`,
+  );
   return res.data;
 }
 
