@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchTopicData } from "../utils/fetchTopicData";
+import { TopicCard } from "./TopicCard";
 
 export function TopicsList() {
   const [topics, setTopics] = useState([]);
@@ -15,13 +16,7 @@ export function TopicsList() {
       <h2>Topics</h2>
       {topics.length !== 0 &&
         topics.map((topic, index) => {
-          return (
-            <div>
-              <img src={`${topic.img_url}`} alt="" />
-              <h3>{topic.slug}</h3>
-              <p>{topic.description}</p>
-            </div>
-          );
+          return <TopicCard topic={topic} key={topic.slug + index} />;
         })}
     </section>
   );
