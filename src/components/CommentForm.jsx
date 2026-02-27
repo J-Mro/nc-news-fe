@@ -38,8 +38,8 @@ export function CommentForm({ setComments, article_id }) {
         >
           Post
         </button>
-        <p>Value of input field: {commentBody}</p>
       </label>
+      {statusMsg !== "" && <p>{statusMsg}</p>}
     </form>
   );
 }
