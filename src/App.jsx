@@ -7,6 +7,7 @@ import { UserProvider } from "./contexts/User";
 import { UsersList } from "./components/UsersList";
 import { Nav } from "./components/Nav";
 import { TopicsList } from "./components/TopicsList";
+import { SingleTopicList } from "./components/SingleTopicList";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/articles/:article_id" element={<SingleArticle />} />
         <Route path="/users" element={<UsersList />} />
         <Route path="/topics" element={<TopicsList />} />
+        <Route path="/topics/:topic" element={<SingleTopicList />} />
       </Routes>
     </UserProvider>
   );
