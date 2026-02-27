@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router";
 import { UserProvider } from "./contexts/User";
 import { UsersList } from "./components/UsersList";
 import { Nav } from "./components/Nav";
+import { TopicsList } from "./components/TopicsList";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Routes>
         <Route path="/" element={<ArticlesList />} />
         <Route path="/articles/:article_id" element={<SingleArticle />} />
-        <Route path="/users" element={<UsersList />}></Route>
+        <Route path="/users" element={<UsersList />} />
+        <Route path="/topics" element={<TopicsList />} />
       </Routes>
     </UserProvider>
   );
