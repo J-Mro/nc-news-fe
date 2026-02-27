@@ -8,17 +8,22 @@ export function ArticlesList() {
   const [articles, setArticles] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams({
     sort_by: "created_at",
+    order: "desc",
   });
   const sorting = searchParams.get("sort_by");
+  const order = searchParams.get("order");
   useEffect(() => {
     async function getData() {
-      const response = await fetchArticleData(sorting);
+      const response = await fetchArticleData(sorting, order);
       setArticles(response);
     }
     getData();
-  }, [sorting]);
+  }, [searchParams]);
   function changeHandlerSorting(e) {
-    setSearchParams({ sort_by: e.target.value });
+    setSearchParams({ sort_by: e.target.value, order: order });
+  }
+  function changeHandlerOrder(e) {
+    setSearchParams({ sort_by: sorting, order: e.target.value });
   }
 
   return (
@@ -28,6 +33,14 @@ export function ArticlesList() {
         <select name="sort-by" id="sort-by" onChange={changeHandlerSorting}>
           <option value="created_at">Date</option>
           <option value="votes">Likes</option>
+        </select>
+        <select name="order" id="order" onChange={changeHandlerOrder}>
+          <option value="desc">
+            {sorting === "created_at" ? "Latest" : "Descending"}
+          </option>
+          <option value="asc">
+            {sorting === "created_at" ? "Oldest" : "Ascending"}
+          </option>
         </select>
       </div>
       {articles.length !== 0 &&
