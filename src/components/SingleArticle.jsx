@@ -3,7 +3,7 @@ import { fetchArticleById } from "../utils/fetchArticleData";
 import { useEffect, useState } from "react";
 import { CommentsList } from "./CommentsList";
 import { ArticleLikeBtn } from "./ArticleLikeBtn";
-import { ArticleNotFoundError } from "./ArticleNotFoundError";
+import { NotFoundError } from "./NotFoundError";
 
 export function SingleArticle() {
   const { article_id } = useParams();
@@ -17,7 +17,7 @@ export function SingleArticle() {
     getData();
   }, []);
   if (article.article_id === undefined) {
-    return <ArticleNotFoundError />;
+    return <NotFoundError resource={"article"} />;
   }
   return (
     <section className="single-article-view">

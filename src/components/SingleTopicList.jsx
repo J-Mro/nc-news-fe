@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { fetchArticlesByTopic } from "../utils/fetchArticleData";
 import { ArticleCard } from "./ArticleCard";
 import { Link } from "react-router";
+import { NotFoundError } from "./NotFoundError";
 
 export function SingleTopicList() {
   const [filteredArticles, setFilteredArticles] = useState([]);
@@ -20,12 +21,7 @@ export function SingleTopicList() {
     getData();
   }, []);
   if (errStatus !== 200) {
-    return (
-      <>
-        <h2>404</h2>
-        <h3>Uh oh! The topic you're looking for does not exist</h3>
-      </>
-    );
+    return <NotFoundError resource={"topic"} />;
   } else {
     return (
       <section>
