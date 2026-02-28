@@ -2,7 +2,7 @@ import { LoginInfo } from "./LoginInfo";
 export function Header() {
   return (
     <header>
-      <h1>This is my website hi</h1>
+      <h1>NC News</h1>
       <LoginInfo />
     </header>
   );
