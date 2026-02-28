@@ -8,6 +8,7 @@ import { UsersList } from "./components/UsersList";
 import { Nav } from "./components/Nav";
 import { TopicsList } from "./components/TopicsList";
 import { SingleTopicList } from "./components/SingleTopicList";
+import { PageNotFoundError } from "./components/PageNotFoundError";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/users" element={<UsersList />} />
         <Route path="/topics" element={<TopicsList />} />
         <Route path="/topics/:topic" element={<SingleTopicList />} />
+        <Route path="*" element={<PageNotFoundError />} />
       </Routes>
     </UserProvider>
   );
