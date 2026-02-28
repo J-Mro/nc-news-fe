@@ -6,6 +6,7 @@ import { useSearchParams } from "react-router";
 
 export function ArticlesList() {
   const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({
     sort_by: "created_at",
     order: "desc",
@@ -13,9 +14,11 @@ export function ArticlesList() {
   const sorting = searchParams.get("sort_by");
   const order = searchParams.get("order");
   useEffect(() => {
+    setIsLoading(true);
     async function getData() {
       const response = await fetchArticleData(sorting, order);
       setArticles(response);
+      setIsLoading(false);
     }
     getData();
   }, [searchParams]);
@@ -25,7 +28,9 @@ export function ArticlesList() {
   function changeHandlerOrder(e) {
     setSearchParams({ sort_by: sorting, order: e.target.value });
   }
-
+  if (isLoading) {
+    return <h2>Loading...</h2>;
+  }
   return (
     <section>
       <h2>Articles</h2>
