@@ -15,7 +15,13 @@ export function SingleArticle() {
     }
     getData();
   }, []);
-
+  if (article.article_id === undefined) {
+    return (
+      <section className="article-does-not-exist-error">
+        <h2>Sorry, the article you're looking for does not exist</h2>
+      </section>
+    );
+  }
   return (
     <section className="single-article-view">
       <h2>{article.title}</h2>
