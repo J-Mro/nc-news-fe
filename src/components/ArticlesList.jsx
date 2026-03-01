@@ -1,35 +1,34 @@
 import { Link } from "react-router";
 import { fetchArticleData } from "../utils/fetchArticleData";
 import { ArticleCard } from "./ArticleCard";
-import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
+import { useLoadingError } from "../hooks/useLoadingError";
 
 export function ArticlesList() {
-  const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({
     sort_by: "created_at",
     order: "desc",
   });
   const sorting = searchParams.get("sort_by");
   const order = searchParams.get("order");
-  useEffect(() => {
-    setIsLoading(true);
-    async function getData() {
-      const response = await fetchArticleData(sorting, order);
-      setArticles(response);
-      setIsLoading(false);
-    }
-    getData();
-  }, [searchParams]);
+  const [data, setData, isLoading, error] = useLoadingError(fetchArticleData, {
+    dependencies: [searchParams],
+    params: [sorting, order],
+  });
+  const articles = data;
+
   function changeHandlerSorting(e) {
     setSearchParams({ sort_by: e.target.value, order: order });
   }
   function changeHandlerOrder(e) {
     setSearchParams({ sort_by: sorting, order: e.target.value });
   }
-  if (isLoading) {
-    return <h2>Loading...</h2>;
+  if (isLoading || error) {
+    return (
+      <section>
+        {isLoading ? <p>Loading...</p> : <p>Couldn't fetch articles 😔</p>}
+      </section>
+    );
   }
   return (
     <section>
