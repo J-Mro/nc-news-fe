@@ -1,17 +1,21 @@
-import { useState, useEffect } from "react";
 import { fetchCommentData } from "../utils/fetchCommentData";
 import { CommentForm } from "./CommentForm";
 import { CommentCard } from "./CommentCard";
+import { useLoadingError } from "../hooks/useLoadingError";
 
 export function CommentsList({ article_id }) {
-  const [comments, setComments] = useState({});
-  useEffect(() => {
-    async function getData() {
-      const responseComments = await fetchCommentData(article_id);
-      setComments(responseComments);
-    }
-    getData();
-  }, []);
+  const [data, setData, isLoading, error] = useLoadingError(fetchCommentData, {
+    params: [article_id],
+  });
+  const comments = data;
+  const setComments = setData;
+  if (isLoading || error) {
+    return (
+      <section>
+        {isLoading ? <p>Loading...</p> : <p>Couldn't fetch comments 😔</p>}
+      </section>
+    );
+  }
   return (
     <>
       <h3>comments</h3>
