@@ -26,7 +26,7 @@ export function ArticlesList() {
   if (isLoading || error) {
     return (
       <section>
-        {isLoading ? <p>Loading...</p> : <p>Couldn't fetch articles 😔</p>}
+        {isLoading ? <p>Loading...</p> : <h3>Couldn't fetch articles 😔</h3>}
       </section>
     );
   }

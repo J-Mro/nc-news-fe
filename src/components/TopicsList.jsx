@@ -9,7 +9,7 @@ export function TopicsList() {
   if (isLoading || error) {
     return (
       <section>
-        {isLoading ? <p>Loading...</p> : <p>Couldn't fetch topics 😔</p>}
+        {isLoading ? <p>Loading...</p> : <h3>Couldn't fetch topics 😔</h3>}
       </section>
     );
   }

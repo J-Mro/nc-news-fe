@@ -7,7 +7,7 @@ export function UsersList() {
   if (isLoading || error) {
     return (
       <section>
-        {isLoading ? <p>Loading...</p> : <h3>Could not fetch users 😔</h3>}
+        {isLoading ? <p>Loading...</p> : <h3>Couldn't fetch users 😔</h3>}
       </section>
     );
   } else {
