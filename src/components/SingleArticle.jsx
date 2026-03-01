@@ -16,7 +16,7 @@ export function SingleArticle() {
   if (isLoading || error) {
     return (
       <section>
-        {isLoading ? <p>Loading</p> : <NotFoundError resource={"article"} />}
+        {isLoading ? <p>Loading...</p> : <NotFoundError resource={"article"} />}
       </section>
     );
   }
