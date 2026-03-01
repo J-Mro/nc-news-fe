@@ -12,9 +12,11 @@ export function LoginInfo() {
     );
   }
   return (
-    <section>
-      <p>{loggedInUser.username}</p>
-      <img src={`${loggedInUser.avatar_url}`} alt="user profile picture" />
-    </section>
+    <Link to="/users">
+      <section className="logged-in-icon">
+        <img src={`${loggedInUser.avatar_url}`} alt="user profile picture" />
+        <p>{loggedInUser.username}</p>
+      </section>
+    </Link>
   );
 }
