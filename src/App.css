@@ -28,6 +28,10 @@ html {
   height: 60px;
   border-radius: 100%;
   border: solid black 4px;
+  transition-duration: 1.2s;
+}
+.logged-in-icon img:hover {
+  scale: 1.05;
 }
 a {
   text-decoration: none;
