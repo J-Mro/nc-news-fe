@@ -1,17 +1,18 @@
-import { useState, useEffect } from "react";
 import { fetchTopicData } from "../utils/fetchTopicData";
 import { TopicCard } from "./TopicCard";
 import { Link } from "react-router";
+import { useLoadingError } from "../hooks/useLoadingError";
 
 export function TopicsList() {
-  const [topics, setTopics] = useState([]);
-  useEffect(() => {
-    async function getData() {
-      const res = await fetchTopicData();
-      setTopics(res);
-    }
-    getData();
-  }, []);
+  const [data, setData, isLoading, error] = useLoadingError(fetchTopicData, {});
+  const topics = data;
+  if (isLoading || error) {
+    return (
+      <section>
+        {isLoading ? <p>Loading...</p> : <p>Couldn't fetch topics 😔</p>}
+      </section>
+    );
+  }
   return (
     <section>
       <h2>Topics</h2>
