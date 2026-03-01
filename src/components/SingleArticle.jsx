@@ -4,20 +4,21 @@ import { useEffect, useState } from "react";
 import { CommentsList } from "./CommentsList";
 import { ArticleLikeBtn } from "./ArticleLikeBtn";
 import { NotFoundError } from "./NotFoundError";
+import { useLoadingError } from "../hooks/useLoadingError";
 
 export function SingleArticle() {
   const { article_id } = useParams();
-  const [article, setArticle] = useState({});
+  const [data, setData, isLoading, error] = useLoadingError(fetchArticleById, {
+    params: [article_id],
+  });
   const [voteChange, setVoteChange] = useState(0);
-  useEffect(() => {
-    async function getData() {
-      const responseArticle = await fetchArticleById(article_id);
-      setArticle(responseArticle);
-    }
-    getData();
-  }, []);
-  if (article.article_id === undefined) {
-    return <NotFoundError resource={"article"} />;
+  const article = data;
+  if (isLoading || error) {
+    return (
+      <section>
+        {isLoading ? <p>Loading</p> : <NotFoundError resource={"article"} />}
+      </section>
+    );
   }
   return (
     <section className="single-article-view">
@@ -32,7 +33,7 @@ export function SingleArticle() {
         setVoteChangeState={setVoteChange}
         article_id={article_id}
         article={article}
-        setArticleState={setArticle}
+        setArticleState={setData}
       />
       <CommentsList article_id={article_id} />
     </section>
