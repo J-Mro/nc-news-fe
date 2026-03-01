@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { fetchArticlesByTopic } from "../utils/fetchArticleData";
 import { ArticleCard } from "./ArticleCard";
@@ -8,9 +7,12 @@ import { useLoadingError } from "../hooks/useLoadingError";
 
 export function SingleTopicList() {
   const { topic } = useParams();
-  const [data, isLoading, error] = useLoadingError(fetchArticlesByTopic, {
-    params: [topic],
-  });
+  const [data, setData, isLoading, error] = useLoadingError(
+    fetchArticlesByTopic,
+    {
+      params: [topic],
+    },
+  );
   const filteredArticles = data;
   if (error) console.log(error.status);
   if (isLoading || error) {
