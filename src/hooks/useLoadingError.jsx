@@ -20,5 +20,5 @@ export function useLoadingError(reqFunction, options) {
     }
     setUp();
   }, [...dependencies]);
-  return [data, isLoading, error];
+  return [data, setData, isLoading, error];
 }
