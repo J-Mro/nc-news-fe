@@ -64,15 +64,13 @@ a h1:hover {
   box-shadow: 0px 15px 9px 0px rgb(52, 52, 52);
 }
 .nav-buttons h2 {
-  border-bottom: 3px solid whitesmoke;
+  border-bottom: 4px solid whitesmoke;
 }
 .nav-buttons h2:hover {
-  border-bottom: 3px solid rgb(52, 52, 52);
+  border-bottom: 4px solid rgb(52, 52, 52);
   color: rgb(52, 52, 52);
 }
-.nav-buttons h2:hover {
-  border-bottom: 3px solid rgb(52, 52, 52);
-}
+
 .articles-list {
   max-width: 700px;
   margin: 1em auto;
