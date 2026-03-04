@@ -31,9 +31,9 @@ export function ArticlesList() {
     );
   }
   return (
-    <section className="">
+    <section className="articles-list-component">
       <h2>Articles</h2>
-      <div className="article-list-query-btns">
+      <div className="articles-list-query-btns">
         <select name="sort-by" id="sort-by" onChange={changeHandlerSorting}>
           <option value="created_at">Date</option>
           <option value="votes">Likes</option>
@@ -55,7 +55,6 @@ export function ArticlesList() {
                 <ArticleCard
                   key={`${index}+${article.title}`}
                   articleData={article}
-                  // className="article-card"
                 />
               </Link>
             );
