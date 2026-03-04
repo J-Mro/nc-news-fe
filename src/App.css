@@ -70,7 +70,25 @@ a h1:hover {
   border-bottom: 4px solid rgb(52, 52, 52);
   color: rgb(52, 52, 52);
 }
-
+.articles-list-component h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.articles-list-query-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.articles-list-query-btns select {
+  background-color: whitesmoke;
+  color: rgb(52, 52, 52);
+  font-weight: 500;
+  border-radius: 20px;
+  height: 2em;
+  width: 7em;
+  align-content: center;
+}
 .articles-list {
   max-width: 700px;
   margin: 1em auto;
