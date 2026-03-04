@@ -19,8 +19,12 @@ export function ArticleCard({ articleData }) {
       </span>
 
       <img src={`${article_img_url}`} alt="article picture" width={400} />
-      <p>votes: {votes}</p>
-      <p>comments: {comment_count}</p>
+      <span className="article-likes">
+        <p>👍 {votes}</p>
+      </span>
+      <span className="article-comment-count">
+        <p>💬 {comment_count}</p>
+      </span>
     </section>
   );
 }
