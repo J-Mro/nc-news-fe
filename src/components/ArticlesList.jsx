@@ -31,7 +31,7 @@ export function ArticlesList() {
     );
   }
   return (
-    <section>
+    <section className="">
       <h2>Articles</h2>
       <div className="article-list-query-btns">
         <select name="sort-by" id="sort-by" onChange={changeHandlerSorting}>
@@ -47,17 +47,20 @@ export function ArticlesList() {
           </option>
         </select>
       </div>
-      {articles.length !== 0 &&
-        articles.map((article, index) => {
-          return (
-            <Link to={`/articles/${article.article_id}`}>
-              <ArticleCard
-                key={`${index}+${article.title}`}
-                articleData={article}
-              />
-            </Link>
-          );
-        })}
+      <div className="articles-list">
+        {articles.length !== 0 &&
+          articles.map((article, index) => {
+            return (
+              <Link to={`/articles/${article.article_id}`}>
+                <ArticleCard
+                  key={`${index}+${article.title}`}
+                  articleData={article}
+                  // className="article-card"
+                />
+              </Link>
+            );
+          })}
+      </div>
     </section>
   );
 }
