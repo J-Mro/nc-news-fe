@@ -7,7 +7,7 @@ export function LoginInfo() {
   if (loggedInUser.username === undefined) {
     return (
       <Link to="/users">
-        <button>Log In</button>
+        <button className="login-btn">Log In</button>
       </Link>
     );
   }
