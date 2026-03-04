@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { fetchArticlesByTopic } from "../utils/fetchArticleData";
 import { ArticleCard } from "./ArticleCard";
 import { Link } from "react-router";
-import { NotFoundError } from "./NotFoundError";
+import { NotFoundError } from "../errors/NotFoundError";
 import { useLoadingError } from "../hooks/useLoadingError";
 
 export function SingleTopicList() {
