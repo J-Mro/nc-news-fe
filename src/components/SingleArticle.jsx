@@ -3,7 +3,7 @@ import { fetchArticleById } from "../utils/fetchArticleData";
 import { useEffect, useState } from "react";
 import { CommentsList } from "./CommentsList";
 import { ArticleLikeBtn } from "./ArticleLikeBtn";
-import { NotFoundError } from "./NotFoundError";
+import { NotFoundError } from "../errors/NotFoundError";
 import { useLoadingError } from "../hooks/useLoadingError";
 
 export function SingleArticle() {
