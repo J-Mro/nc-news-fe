@@ -8,7 +8,7 @@ import { UsersList } from "./components/UsersList";
 import { Nav } from "./components/Nav";
 import { TopicsList } from "./components/TopicsList";
 import { SingleTopicList } from "./components/SingleTopicList";
-import { NotFoundError } from "./components/NotFoundError";
+import { NotFoundError } from "./errors/NotFoundError";
 
 function App() {
   return (
