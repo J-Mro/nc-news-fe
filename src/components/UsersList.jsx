@@ -12,13 +12,15 @@ export function UsersList() {
     );
   } else {
     return (
-      <section>
+      <section className="users-list-text">
         <h2>Users</h2>
         <h3>Who's browsing?</h3>
-        {users.length !== 0 &&
-          users.map((user, index) => {
-            return <UserCard user={user} />;
-          })}
+        <span className="user-cards">
+          {users.length !== 0 &&
+            users.map((user, index) => {
+              return <UserCard user={user} />;
+            })}
+        </span>
       </section>
     );
   }

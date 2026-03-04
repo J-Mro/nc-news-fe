@@ -8,10 +8,16 @@ export function UserCard({ user }) {
         onClick={() => {
           setLoggedInUser(user);
         }}
+        className="user-btn"
       >
-        <h4>{user.username}</h4>
-        <img src={`${user.avatar_url}`} alt="user profile picture" />
+        <img
+          src={`${user.avatar_url}`}
+          alt="user profile picture"
+          width="250px"
+          height="250px"
+        />
       </button>
+      <h4 className="user-name-user-page">{user.username}</h4>
     </div>
   );
 }
