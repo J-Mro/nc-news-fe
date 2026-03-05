@@ -230,6 +230,31 @@ a h1:hover {
   display: grid;
   grid-row-gap: 1em;
 }
+/*single article view*/
+.single-article-view {
+  padding: 2em;
+  margin: 2em;
+  width: fit-content;
+  background-color: whitesmoke;
+  border-radius: 20pt;
+}
+.single-article-view-topic-link {
+  width: 6em;
+  height: 2em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 12pt;
+  background-color: black;
+  color: aliceblue;
+  border: 3pt solid black;
+  border-radius: 20pt;
+}
+.single-article-view-topic-link:hover {
+  background-color: whitesmoke;
+  color: black;
+  border: 3pt solid black;
+  cursor: pointer;
+}
 /*loading state*/
 .loading-error {
   display: flex;
