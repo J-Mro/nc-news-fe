@@ -1,17 +1,42 @@
-# React + Vite
+# NC News Front End
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 👋 Welcome!
 
-Currently, two official plugins are available:
+NC News Front End is a Front End SPA that provides a user-friendly interactive display using the API [nc-news-be](https://github.com/J-Mro/nc-back-end).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Please view the current deployed version [here](https://incomparable-mandazi-0d1bc1.netlify.app)!
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<ul>
+<li>
+View a list of available articles and filter them by date and likes
+</li>
+<li>
+View a single article
+</li>
+<li>
+View a list of topics
+</li>
+<li>
+View a filtered list of articles by topic
+</li>
+<li>
+View a grid of users
+</li>
+<li>
+View a list of comments on articles
+</li>
+</ul>
 
-## Expanding the ESLint configuration
+## Project dependencies
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# nc-news-fe
+Run `npm install` to install the necessary dependencies from this repo.
+
+To use the relevant backend API, please find the necessary set up in the README [here](https://github.com/J-Mro/nc-back-end).
+
+Note that this project requires node v25.2.1 or later.
+
+## Credits
+
+This portfolio project was created as part of a Digital Skills Bootcamp in Software Engineering provided by [Northcoders](https://northcoders.com/).
