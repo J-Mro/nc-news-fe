@@ -23,8 +23,8 @@ export function SingleTopicList() {
     );
   }
   return (
-    <section>
-      <h2>Topic: {topic}</h2>
+    <section className="single-topic-list">
+      <h2 className="single-topic-view-title">Topic: {topic}</h2>
       {filteredArticles.length !== 0 &&
         filteredArticles.map((article, index) => {
           return (
