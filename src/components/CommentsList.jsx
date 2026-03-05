@@ -11,7 +11,7 @@ export function CommentsList({ article_id }) {
   const setComments = setData;
   if (isLoading || error) {
     return (
-      <section>
+      <section className="loading-error">
         {isLoading ? <p>Loading...</p> : <p>Couldn't fetch comments 😔</p>}
       </section>
     );

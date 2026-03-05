@@ -6,7 +6,7 @@ export function UsersList() {
   const users = data;
   if (isLoading || error) {
     return (
-      <section>
+      <section className="loading-error">
         {isLoading ? <p>Loading...</p> : <h3>Couldn't fetch users 😔</h3>}
       </section>
     );

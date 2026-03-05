@@ -15,7 +15,7 @@ export function SingleArticle() {
   const article = data;
   if (isLoading || error) {
     return (
-      <section>
+      <section className="loading-error">
         {isLoading ? <p>Loading...</p> : <NotFoundError resource={"article"} />}
       </section>
     );

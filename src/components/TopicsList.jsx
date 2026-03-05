@@ -8,7 +8,7 @@ export function TopicsList() {
   const topics = data;
   if (isLoading || error) {
     return (
-      <section>
+      <section className="loading-error">
         {isLoading ? <p>Loading...</p> : <h3>Couldn't fetch topics 😔</h3>}
       </section>
     );
