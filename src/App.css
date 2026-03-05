@@ -218,3 +218,22 @@ a h1:hover {
 .topic-card:hover {
   scale: 1.01;
 }
+
+/*single topic view*/
+.single-topic-view-title {
+  display: flex;
+  justify-content: center;
+}
+.single-topic-list {
+  max-width: 700px;
+  margin: 1em auto;
+  display: grid;
+  grid-row-gap: 1em;
+}
+/*loading state*/
+.loading-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
