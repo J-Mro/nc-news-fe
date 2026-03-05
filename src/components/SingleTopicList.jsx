@@ -17,8 +17,7 @@ export function SingleTopicList() {
   if (error) console.log(error.status);
   if (isLoading || error) {
     return (
-      <section>
-        <h2>Topic</h2>
+      <section className="loading-error">
         {isLoading ? <p>Loading...</p> : <NotFoundError resource={"topic"} />}
       </section>
     );
