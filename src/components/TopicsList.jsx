@@ -14,8 +14,8 @@ export function TopicsList() {
     );
   }
   return (
-    <section>
-      <h2>Topics</h2>
+    <section className="topics-list">
+      <h2 className="topics-header">Topics</h2>
       {topics.length !== 0 &&
         topics.map((topic, index) => {
           return (
