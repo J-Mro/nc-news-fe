@@ -4,7 +4,7 @@
 
 NC News Front End is a Front End SPA that provides a user-friendly interactive display using the API [nc-news-be](https://github.com/J-Mro/nc-back-end).
 
-Please view the current deployed version [here](https://incomparable-mandazi-0d1bc1.netlify.app)!
+Please view the current deployed version [here]([https://incomparable-mandazi-0d1bc1.netlify.app](https://nc-northstar.netlify.app))!
 
 ## Features
 
