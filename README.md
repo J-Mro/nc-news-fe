@@ -17,7 +17,7 @@
 
 NorthStar\* is a news-application-style Front End SPA that provides a user-friendly interactive display using the API [nc-news-be](https://github.com/J-Mro/nc-back-end), providing the hottest topics and articles.
 
-Please view the current deployed version [here](https://incomparable-mandazi-0d1bc1.netlify.app)!
+Please view the current deployed version [here](https://nc-northstar.netlify.app)!
 
 This project was created using node v25.2.1, React v19.2.0 and Vite v7.3.1. Please note that earlier versions may not work for this application.
 
